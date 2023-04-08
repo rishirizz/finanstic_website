@@ -83,10 +83,13 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                         ),
                         child: Row(
                           children: [
-                            Text(
-                              'About',
-                              style: primaryTextStyle(context).copyWith(
-                                fontSize: 25 * getTextScaleFactor(context),
+                            InkWell(
+                              onTap: () {},
+                              child: Text(
+                                'About',
+                                style: primaryTextStyle(context).copyWith(
+                                  fontSize: 25 * getTextScaleFactor(context),
+                                ),
                               ),
                             ),
                             const SizedBox(
@@ -231,6 +234,25 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                           ),
                         ),
                       ],
+                    ),
+                    const SizedBox(
+                      height: 80,
+                    ),
+                    Container(
+                      color: Colors.white,
+                      child: GridView.builder(
+                          shrinkWrap: true,
+                          itemCount: appImages.length,
+                          gridDelegate:
+                              const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 600,
+                            mainAxisExtent: 700,
+                          ),
+                          itemBuilder: (BuildContext context, int index) {
+                            return Image.asset(
+                              appImages[index],
+                            );
+                          }),
                     ),
                   ],
                 ),

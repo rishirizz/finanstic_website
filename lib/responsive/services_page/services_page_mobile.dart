@@ -164,6 +164,9 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          const SizedBox(
+                            height: 40,
+                          ),
                           Text(
                             'What we offer',
                             style: h2TextStyle(context).copyWith(
@@ -171,7 +174,7 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                             ),
                           ),
                           const SizedBox(
-                            height: 20,
+                            height: 40,
                           ),
                           const AboutHeading(
                             heading: 'Seamless Experience',
@@ -219,7 +222,7 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                             content: choosingCurrency,
                           ),
                           const SizedBox(
-                            height: 20,
+                            height: 40,
                           ),
                           Container(
                             color: Colors.white,
@@ -236,7 +239,7 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                                     appImages[index],
                                   );
                                 }),
-                          )
+                          ),
                         ],
                       ),
                     ),

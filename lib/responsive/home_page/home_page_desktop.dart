@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
 import '../../pages/home_page.dart';
+import '../../pages/service_page.dart';
 import '../services_page/services_page_mobile.dart';
 
 class HomePageDesktop extends StatelessWidget {
@@ -82,19 +83,30 @@ class HomePageDesktop extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            Text(
-                              'About',
-                              style: primaryTextStyle(context).copyWith(
-                                fontSize: 25 * getTextScaleFactor(context),
+                            InkWell(
+                              onTap: () {},
+                              child: Text(
+                                'About',
+                                style: primaryTextStyle(context).copyWith(
+                                  fontSize: 25 * getTextScaleFactor(context),
+                                ),
                               ),
                             ),
                             const SizedBox(
                               width: 50,
                             ),
-                            Text(
-                              'Services',
-                              style: primaryTextStyle(context).copyWith(
-                                fontSize: 25 * getTextScaleFactor(context),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  ServicesPage.routeName,
+                                );
+                              },
+                              child: Text(
+                                'Services',
+                                style: primaryTextStyle(context).copyWith(
+                                  fontSize: 25 * getTextScaleFactor(context),
+                                ),
                               ),
                             )
                           ],
