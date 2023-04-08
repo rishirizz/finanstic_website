@@ -2,10 +2,8 @@ import 'dart:ui';
 
 import 'package:finanstic_website/constants/constants.dart';
 import 'package:flutter/material.dart';
-
 import '../../components/text_styles.dart';
 import '../../pages/service_page.dart';
-import '../services_page/services_page_mobile.dart';
 
 class HomePageMobile extends StatefulWidget {
   const HomePageMobile({super.key});

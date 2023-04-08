@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const HomePage(
-        homePageMobile: HomePageDesktop(),
-        homePageDesktop: HomePageMobile(),
+        homePageMobile: HomePageMobile(),
+        homePageDesktop: HomePageDesktop(),
       ),
       onGenerateRoute: (RouteSettings settings) {
         debugPrint('build route for ${settings.name}');
