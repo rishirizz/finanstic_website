@@ -125,123 +125,14 @@ class HomePageDesktop extends StatelessWidget {
                   horizontal: 20.0,
                 ),
                 child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'What we offer',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Seamless Experience',
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Interactive Animations',
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: seamlessExperience,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: interactiveAnimations,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    AboutHeading(heading: 'How can Finanstic help you?'),
+                    SizedBox(
                       height: 40,
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Security',
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Choosing Currency',
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: security,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: choosingCurrency,
-                          ),
-                        ),
-                      ],
+                    AboutContent(
+                      content: finansticDef,
                     ),
                   ],
                 ),

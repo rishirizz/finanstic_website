@@ -4,6 +4,8 @@ import 'package:finanstic_website/constants/constants.dart';
 import 'package:flutter/material.dart';
 import '../../components/text_styles.dart';
 import '../../pages/service_page.dart';
+import '../../refactored_widgets/about_content.dart';
+import '../../refactored_widgets/about_heading.dart';
 
 class HomePageMobile extends StatefulWidget {
   const HomePageMobile({super.key});
@@ -125,53 +127,60 @@ class _HomePageMobileState extends State<HomePageMobile>
             : SingleChildScrollView(
                 child: Column(
                   children: [
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Container(
-                          height: 300,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(
-                                'assets/main_image.jpg',
+                    Container(
+                      height: 250,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            'assets/main_image.jpg',
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Stack(
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'FINANSTIC',
+                                style: headerTextStyleMobile(context),
                               ),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        BackdropFilter(
-                          filter: ImageFilter.blur(
-                            sigmaX: 1.0,
-                            sigmaY: 1.0,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 60.0),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'FINANSTIC',
-                                  style: headerTextStyleMobile(context),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 30,
                                 ),
-                                const SizedBox(
-                                  height: 15,
+                                child: Text(
+                                  'A simple and efficient expense tracking application that actually gets the job done.',
+                                  style: primaryTextStyle(context),
+                                  textAlign: TextAlign.center,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 30,
-                                  ),
-                                  child: Text(
-                                    'A simple and efficient expense tracking application that actually gets the job done.',
-                                    style: primaryTextStyle(context),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    // Center(child: Text('Sign up details')),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          AboutHeading(heading: 'How can Finanstic help you?'),
+                          SizedBox(
+                            height: 40,
+                          ),
+                          AboutContent(
+                            content: finansticDef,
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
