@@ -4,7 +4,8 @@ import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
 import '../../pages/home_page.dart';
 import '../../pages/service_page.dart';
-import '../services_page/services_page_mobile.dart';
+import '../../refactored_widgets/about_content.dart';
+import '../../refactored_widgets/about_heading.dart';
 
 class HomePageDesktop extends StatelessWidget {
   const HomePageDesktop({super.key});

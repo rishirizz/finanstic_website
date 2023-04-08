@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
 import '../../pages/service_page.dart';
+import '../../refactored_widgets/about_content.dart';
+import '../../refactored_widgets/about_heading.dart';
 
 class ServicesPageMobile extends StatefulWidget {
   const ServicesPageMobile({super.key});
@@ -290,40 +292,5 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
       textFontSizeServices = 30 * getTextScaleFactor(context);
       servicesTextDecoration = TextDecoration.none;
     });
-  }
-}
-
-class AboutHeading extends StatelessWidget {
-  final String heading;
-
-  const AboutHeading({
-    required this.heading,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      heading,
-      style: h2TextStyle(
-        context,
-      ),
-    );
-  }
-}
-
-class AboutContent extends StatelessWidget {
-  final String content;
-  const AboutContent({
-    required this.content,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      content,
-      style: paragraphTextStyle(context),
-    );
   }
 }

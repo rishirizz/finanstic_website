@@ -1,9 +1,10 @@
-import 'package:finanstic_website/responsive/services_page/services_page_mobile.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
 import '../../pages/home_page.dart';
+import '../../refactored_widgets/about_content.dart';
+import '../../refactored_widgets/about_heading.dart';
 
 class ServicesPageDesktop extends StatefulWidget {
   const ServicesPageDesktop({super.key});
