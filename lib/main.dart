@@ -1,4 +1,7 @@
+import 'package:finanstic_website/pages/about_page.dart';
 import 'package:finanstic_website/pages/service_page.dart';
+import 'package:finanstic_website/responsive/about_page/about-page_mobile.dart';
+import 'package:finanstic_website/responsive/about_page/about_page_desktop.dart';
 import 'package:finanstic_website/responsive/services_page/services_page_desktop.dart';
 import 'package:finanstic_website/responsive/services_page/services_page_mobile.dart';
 import 'package:finanstic_website/responsive/home_page/home_page_mobile.dart';
@@ -35,6 +38,10 @@ class MyApp extends StatelessWidget {
                 servicesPageMobile: ServicesPageMobile(),
                 servicePageDesktop: ServicesPageDesktop(),
               ),
+          AboutPage.routeName: (BuildContext context) => const AboutPage(
+                aboutPageMobile: AboutPageMobile(),
+                aboutPageDesktop: AboutPageDesktop(),
+              )
         };
         WidgetBuilder builder = routes[settings.name]!;
         return MaterialPageRoute(

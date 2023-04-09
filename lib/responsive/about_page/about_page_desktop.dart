@@ -1,31 +1,20 @@
+import 'package:finanstic_website/pages/service_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
-import '../../pages/about_page.dart';
 import '../../pages/home_page.dart';
 import '../../refactored_widgets/about_content.dart';
 import '../../refactored_widgets/about_heading.dart';
 
-class ServicesPageDesktop extends StatefulWidget {
-  const ServicesPageDesktop({super.key});
+class AboutPageDesktop extends StatefulWidget {
+  const AboutPageDesktop({super.key});
 
   @override
-  State<ServicesPageDesktop> createState() => _ServicesPageDesktopState();
+  State<AboutPageDesktop> createState() => _AboutPageDesktopState();
 }
 
-class _ServicesPageDesktopState extends State<ServicesPageDesktop>
-    with SingleTickerProviderStateMixin {
-  bool isPlaying = false;
-  bool isMenuOpened = false;
-  AnimationController? animationController;
-  Color textColorAbout = const Color(0xff707070);
-  double textFontSizeAbout = 30;
-  Color textColorServices = const Color(0xff707070);
-  double textFontSizeServices = 30;
-  TextDecoration aboutTextDecoration = TextDecoration.none;
-  TextDecoration servicesTextDecoration = TextDecoration.none;
-
+class _AboutPageDesktopState extends State<AboutPageDesktop> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,7 +29,7 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      'assets/light.jpg',
+                      'assets/about.jpg',
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -85,28 +74,28 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                         ),
                         child: Row(
                           children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushReplacementNamed(
-                                  context,
-                                  AboutPage.routeName,
-                                );
-                              },
-                              child: Text(
-                                'About',
-                                style: primaryTextStyle(context).copyWith(
-                                  fontSize: 25 * getTextScaleFactor(context),
-                                ),
+                            Text(
+                              'About',
+                              style: primaryTextStyle(context).copyWith(
+                                fontSize: 25 * getTextScaleFactor(context),
+                                decoration: TextDecoration.underline,
                               ),
                             ),
                             const SizedBox(
                               width: 50,
                             ),
-                            Text(
-                              'Services',
-                              style: primaryTextStyle(context).copyWith(
-                                fontSize: 25 * getTextScaleFactor(context),
-                                decoration: TextDecoration.underline,
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                  context,
+                                  ServicesPage.routeName,
+                                );
+                              },
+                              child: Text(
+                                'Services',
+                                style: primaryTextStyle(context).copyWith(
+                                  fontSize: 25 * getTextScaleFactor(context),
+                                ),
                               ),
                             )
                           ],

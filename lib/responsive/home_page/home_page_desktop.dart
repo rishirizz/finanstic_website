@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
+import '../../pages/about_page.dart';
 import '../../pages/home_page.dart';
 import '../../pages/service_page.dart';
 import '../../refactored_widgets/about_content.dart';
@@ -85,7 +86,12 @@ class HomePageDesktop extends StatelessWidget {
                         child: Row(
                           children: [
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  AboutPage.routeName,
+                                );
+                              },
                               child: Text(
                                 'About',
                                 style: primaryTextStyle(context).copyWith(
