@@ -29,7 +29,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      'assets/about.jpg',
+                      'assets/about1.jpg',
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -38,9 +38,17 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                   children: [
                     Align(
                       alignment: Alignment.bottomCenter,
-                      child: Text(
-                        'App Features',
-                        style: headerTextStyleDesktop(context),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                        ),
+                        child: Text(
+                          'Get ready to level up financially!',
+                          style: headerTextStyleDesktop(context).copyWith(
+                            fontSize: 60 * getTextScaleFactor(context),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                     Align(
@@ -115,140 +123,18 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Expanded(
-                          child: Text(
-                            'What we offer',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
-                            ),
+                        Text(
+                          'What we offer',
+                          style: h2TextStyle(context).copyWith(
+                            decoration: TextDecoration.none,
                           ),
                         ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Seamless Experience',
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Interactive Animations',
-                          ),
+                        AboutHeading(
+                          heading: 'Seamless Experience',
                         ),
                       ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: seamlessExperience,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: interactiveAnimations,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Security',
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Choosing Currency',
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: security,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: choosingCurrency,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 80,
-                    ),
-                    Container(
-                      color: Colors.white,
-                      child: GridView.builder(
-                          shrinkWrap: true,
-                          itemCount: appImages.length,
-                          gridDelegate:
-                              const SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: 600,
-                            mainAxisExtent: 700,
-                          ),
-                          itemBuilder: (BuildContext context, int index) {
-                            return Image.asset(
-                              appImages[index],
-                            );
-                          }),
                     ),
                   ],
                 ),

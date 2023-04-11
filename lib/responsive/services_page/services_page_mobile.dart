@@ -131,14 +131,14 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Stack(
-                      alignment: Alignment.center,
+                      alignment: Alignment.bottomCenter,
                       children: [
                         Container(
                           height: 250,
                           decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage(
-                                'assets/light.jpg',
+                                'assets/laptop.jpg',
                               ),
                               fit: BoxFit.cover,
                             ),

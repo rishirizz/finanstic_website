@@ -40,7 +40,7 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      'assets/light.jpg',
+                      'assets/laptop.jpg',
                     ),
                     fit: BoxFit.cover,
                   ),
