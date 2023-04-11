@@ -1,4 +1,4 @@
-package com.example.finanstic_website
+package com.dev.finanstic_website
 
 import io.flutter.embedding.android.FlutterActivity
 
