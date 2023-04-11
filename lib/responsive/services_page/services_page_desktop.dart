@@ -116,152 +116,162 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 80,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20.0,
+              Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/white.jpg',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'What we offer',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                  ),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 80,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'What we offer',
+                              style: h2TextStyle(context).copyWith(
+                                decoration: TextDecoration.none,
+                              ),
                             ),
                           ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Seamless Experience',
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Interactive Animations',
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
+                          const Expanded(
+                            flex: 2,
+                            child: AboutHeading(
+                              heading: 'Seamless Experience',
                             ),
                           ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: seamlessExperience,
+                          const SizedBox(
+                            width: 40,
                           ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: interactiveAnimations,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
+                          const Expanded(
+                            flex: 2,
+                            child: AboutHeading(
+                              heading: 'Interactive Animations',
                             ),
                           ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Security',
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutHeading(
-                            heading: 'Choosing Currency',
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              '',
+                              style: h2TextStyle(context).copyWith(
+                                decoration: TextDecoration.none,
+                              ),
                             ),
                           ),
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: security,
+                          const Expanded(
+                            flex: 2,
+                            child: AboutContent(
+                              content: seamlessExperience,
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        const Expanded(
-                          flex: 2,
-                          child: AboutContent(
-                            content: choosingCurrency,
+                          const SizedBox(
+                            width: 40,
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 80,
-                    ),
-                    Container(
-                      color: Colors.white,
-                      child: GridView.builder(
-                          shrinkWrap: true,
-                          itemCount: appImages.length,
-                          gridDelegate:
-                              const SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: 600,
-                            mainAxisExtent: 700,
+                          const Expanded(
+                            flex: 2,
+                            child: AboutContent(
+                              content: interactiveAnimations,
+                            ),
                           ),
-                          itemBuilder: (BuildContext context, int index) {
-                            return Image.asset(
-                              appImages[index],
-                            );
-                          }),
-                    ),
-                  ],
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              '',
+                              style: h2TextStyle(context).copyWith(
+                                decoration: TextDecoration.none,
+                              ),
+                            ),
+                          ),
+                          const Expanded(
+                            flex: 2,
+                            child: AboutHeading(
+                              heading: 'Security',
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 40,
+                          ),
+                          const Expanded(
+                            flex: 2,
+                            child: AboutHeading(
+                              heading: 'Choosing Currency',
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              '',
+                              style: h2TextStyle(context).copyWith(
+                                decoration: TextDecoration.none,
+                              ),
+                            ),
+                          ),
+                          const Expanded(
+                            flex: 2,
+                            child: AboutContent(
+                              content: security,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 40,
+                          ),
+                          const Expanded(
+                            flex: 2,
+                            child: AboutContent(
+                              content: choosingCurrency,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 80,
+                      ),
+                      Container(
+                        color: Colors.white,
+                        child: GridView.builder(
+                            shrinkWrap: true,
+                            itemCount: appImages.length,
+                            gridDelegate:
+                                const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 600,
+                              mainAxisExtent: 700,
+                            ),
+                            itemBuilder: (BuildContext context, int index) {
+                              return Image.asset(
+                                appImages[index],
+                              );
+                            }),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

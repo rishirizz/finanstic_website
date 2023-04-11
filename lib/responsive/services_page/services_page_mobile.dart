@@ -156,93 +156,101 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0,
+                    Container(
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            'assets/white.jpg',
+                          ),
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            'What we offer',
-                            style: h2TextStyle(context).copyWith(
-                              decoration: TextDecoration.none,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20.0,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 40,
                             ),
-                          ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          const AboutHeading(
-                            heading: 'Seamless Experience',
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const AboutContent(
-                            content: seamlessExperience,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const AboutHeading(
-                            heading: 'Interactive Animations',
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const AboutContent(
-                            content: interactiveAnimations,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const AboutHeading(
-                            heading: 'Security',
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const AboutContent(
-                            content: security,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const AboutHeading(
-                            heading: 'Choosing Currency',
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const AboutContent(
-                            content: choosingCurrency,
-                          ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          Container(
-                            color: Colors.white,
-                            child: GridView.builder(
-                                shrinkWrap: true,
-                                itemCount: appImages.length,
-                                gridDelegate:
-                                    const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  childAspectRatio: 1 / 2,
-                                ),
-                                itemBuilder: (BuildContext context, int index) {
-                                  return Image.asset(
-                                    appImages[index],
-                                  );
-                                }),
-                          ),
-                        ],
+                            Text(
+                              'What we offer',
+                              style: h2TextStyle(context).copyWith(
+                                decoration: TextDecoration.none,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            const AboutHeading(
+                              heading: 'Seamless Experience',
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const AboutContent(
+                              content: seamlessExperience,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const AboutHeading(
+                              heading: 'Interactive Animations',
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const AboutContent(
+                              content: interactiveAnimations,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const AboutHeading(
+                              heading: 'Security',
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const AboutContent(
+                              content: security,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const AboutHeading(
+                              heading: 'Choosing Currency',
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const AboutContent(
+                              content: choosingCurrency,
+                            ),
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            Container(
+                              color: Colors.white,
+                              child: GridView.builder(
+                                  shrinkWrap: true,
+                                  itemCount: appImages.length,
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    childAspectRatio: 1 / 2,
+                                  ),
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    return Image.asset(
+                                      appImages[index],
+                                    );
+                                  }),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
