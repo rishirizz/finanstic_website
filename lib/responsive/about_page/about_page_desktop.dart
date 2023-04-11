@@ -125,14 +125,30 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'What we offer',
-                          style: h2TextStyle(context).copyWith(
-                            decoration: TextDecoration.none,
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'There is no better time than now',
+                                style: h2TextStyle(context).copyWith(
+                                  decoration: TextDecoration.none,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              const AboutContent(
+                                content: aboutPageContent,
+                              ),
+                            ],
                           ),
                         ),
-                        AboutHeading(
-                          heading: 'Seamless Experience',
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        Expanded(
+                          child: SizedBox(),
                         ),
                       ],
                     ),

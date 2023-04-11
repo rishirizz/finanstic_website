@@ -140,6 +140,9 @@ class HomePageDesktop extends StatelessWidget {
                     AboutContent(
                       content: finansticDef,
                     ),
+                    SizedBox(
+                      height: 40,
+                    ),
                   ],
                 ),
               ),

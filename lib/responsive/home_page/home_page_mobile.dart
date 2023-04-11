@@ -178,6 +178,9 @@ class _HomePageMobileState extends State<HomePageMobile>
                           AboutContent(
                             content: finansticDef,
                           ),
+                           SizedBox(
+                            height: 40,
+                          ),
                         ],
                       ),
                     ),
