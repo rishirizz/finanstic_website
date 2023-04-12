@@ -30,7 +30,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
           child: Column(
             children: [
               Container(
-                height: 500,
+                height: 380,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -183,8 +183,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                                   height: 30,
                                 ),
                                 SizedBox(
-                                  height: 400,
-                                  width: 600,
+                                  height: 500,
                                   child: AspectRatio(
                                     aspectRatio: _controller.value.aspectRatio,
                                     child: VideoPlayer(
