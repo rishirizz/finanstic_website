@@ -20,6 +20,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.10.0
 
   flutter_lints: ^2.0.0
 
@@ -28,3 +29,8 @@ flutter:
 
   assets:
     - assets/
+
+flutter_icons:
+  image_path: "assets/finanstic_app_icon.png"
+  android: true
+  ios: false
