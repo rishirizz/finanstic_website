@@ -52,9 +52,10 @@ class _HomePageMobileState extends State<HomePageMobile>
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.pushReplacementNamed(
+                  Navigator.pushNamedAndRemoveUntil(
                     context,
                     HomePageMobile.routeName,
+                    (Route route) => false,
                   );
                 },
                 child: Image.asset(
@@ -87,9 +88,10 @@ class _HomePageMobileState extends State<HomePageMobile>
                         setState(() {
                           isMenuOpened = false;
                         });
-                        Navigator.pushNamed(
+                        Navigator.pushNamedAndRemoveUntil(
                           context,
                           AboutPage.routeName,
+                          (Route route) => false,
                         );
                       },
                       child: Text(
@@ -107,9 +109,10 @@ class _HomePageMobileState extends State<HomePageMobile>
                         setState(() {
                           isMenuOpened = false;
                         });
-                        Navigator.pushNamed(
+                        Navigator.pushNamedAndRemoveUntil(
                           context,
                           ServicesPage.routeName,
+                          (Route route) => false,
                         );
                       },
                       child: Text(

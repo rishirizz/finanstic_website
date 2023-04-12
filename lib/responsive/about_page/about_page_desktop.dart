@@ -67,9 +67,10 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                         ),
                         child: InkWell(
                           onTap: () {
-                            Navigator.pushReplacementNamed(
+                            Navigator.pushNamedAndRemoveUntil(
                               context,
                               HomePage.routeName,
+                              (Route route) => false,
                             );
                           },
                           child: Image.asset(
@@ -101,10 +102,10 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                             ),
                             InkWell(
                               onTap: () {
-                                Navigator.pushReplacementNamed(
-                                  context,
-                                  ServicesPage.routeName,
-                                );
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    ServicesPage.routeName,
+                                    (Route route) => false);
                               },
                               child: Text(
                                 'Services',
@@ -189,7 +190,6 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
   initializeVideoPlayer() {
     _controller = VideoPlayerController.asset(
       'assets/app_feature.mp4',
-     
     );
     _controller.initialize().then(
           (value) => _controller.play(),

@@ -63,9 +63,10 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                         ),
                         child: InkWell(
                           onTap: () {
-                            Navigator.pushReplacementNamed(
+                            Navigator.pushNamedAndRemoveUntil(
                               context,
                               HomePage.routeName,
+                              (Route route) => false,
                             );
                           },
                           child: Image.asset(
@@ -87,9 +88,10 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                           children: [
                             InkWell(
                               onTap: () {
-                                Navigator.pushReplacementNamed(
+                                Navigator.pushNamedAndRemoveUntil(
                                   context,
                                   AboutPage.routeName,
+                                  (Route route) => false,
                                 );
                               },
                               child: Text(

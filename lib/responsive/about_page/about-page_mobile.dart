@@ -56,9 +56,10 @@ class _AboutPageMobileState extends State<AboutPageMobile>
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.pushReplacementNamed(
+                  Navigator.pushNamedAndRemoveUntil(
                     context,
                     HomePage.routeName,
+                    (Route route) => false,
                   );
                 },
                 child: Image.asset(
@@ -99,9 +100,10 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                         setState(() {
                           isMenuOpened = false;
                         });
-                        Navigator.pushNamed(
+                        Navigator.pushNamedAndRemoveUntil(
                           context,
                           ServicesPage.routeName,
+                          (Route route) => false,
                         );
                       },
                       child: Text(

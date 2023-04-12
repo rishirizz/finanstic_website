@@ -63,9 +63,10 @@ class HomePageDesktop extends StatelessWidget {
                         ),
                         child: InkWell(
                           onTap: () {
-                            Navigator.pushReplacementNamed(
+                            Navigator.pushNamedAndRemoveUntil(
                               context,
                               HomePage.routeName,
+                              (Route route) => false,
                             );
                           },
                           child: Image.asset(
@@ -87,10 +88,10 @@ class HomePageDesktop extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  AboutPage.routeName,
-                                );
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    AboutPage.routeName,
+                                    (Route route) => false);
                               },
                               child: Text(
                                 'About',
@@ -104,10 +105,10 @@ class HomePageDesktop extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  ServicesPage.routeName,
-                                );
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    ServicesPage.routeName,
+                                    (Route route) => false);
                               },
                               child: Text(
                                 'Services',
