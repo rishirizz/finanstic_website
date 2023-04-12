@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
@@ -28,10 +29,12 @@ class _AboutPageMobileState extends State<AboutPageMobile>
   double textFontSizeServices = 30;
   TextDecoration aboutTextDecoration = TextDecoration.none;
   TextDecoration servicesTextDecoration = TextDecoration.none;
+  late VideoPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
+    initializeVideoPlayer();
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(
@@ -161,7 +164,6 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                       ],
                     ),
                     Container(
-                      height: 500,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
@@ -197,10 +199,16 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                               ),
                             ),
                             const SizedBox(
-                              height: 40,
+                              height: 60,
                             ),
                           ],
                         ),
+                      ),
+                    ),
+                    AspectRatio(
+                      aspectRatio: _controller.value.aspectRatio,
+                      child: VideoPlayer(
+                        _controller,
                       ),
                     ),
                     // Container(
@@ -235,5 +243,21 @@ class _AboutPageMobileState extends State<AboutPageMobile>
           ? animationController!.forward()
           : animationController!.reverse();
     });
+  }
+
+  initializeVideoPlayer() {
+    _controller = VideoPlayerController.network(
+      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    );
+    _controller.initialize().then(
+          (value) => _controller.play(),
+        );
+    _controller.setLooping(true);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
