@@ -149,9 +149,21 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                             sigmaX: 1.0,
                             sigmaY: 1.0,
                           ),
-                          child: Text(
-                            'App Features',
-                            style: headerTextStyleMobile(context),
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 10.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(137, 138, 138, 138),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  'App Features',
+                                  style: headerTextStyleMobile(context),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -232,26 +244,26 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                             const SizedBox(
                               height: 40,
                             ),
-                            Container(
-                              color: Colors.white,
-                              child: GridView.builder(
-                                  shrinkWrap: true,
-                                  itemCount: appImages.length,
-                                  gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                    childAspectRatio: 1 / 2,
-                                  ),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return Image.asset(
-                                      appImages[index],
-                                    );
-                                  }),
-                            ),
                           ],
                         ),
                       ),
+                    ),
+                    Container(
+                      color: Colors.white,
+                      child: GridView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: appImages.length,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            childAspectRatio: 1 / 2,
+                          ),
+                          itemBuilder: (BuildContext context, int index) {
+                            return Image.asset(
+                              appImages[index],
+                            );
+                          }),
                     ),
                   ],
                 ),

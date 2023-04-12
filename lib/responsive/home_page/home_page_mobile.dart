@@ -162,7 +162,7 @@ class _HomePageMobileState extends State<HomePageMobile>
                       ),
                     ),
                     const SizedBox(
-                      height: 40,
+                      height: 20,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -173,7 +173,7 @@ class _HomePageMobileState extends State<HomePageMobile>
                         children: const [
                           AboutHeading(heading: 'How can Finanstic help you?'),
                           SizedBox(
-                            height: 40,
+                            height: 20,
                           ),
                           AboutContent(
                             content: finansticDef,

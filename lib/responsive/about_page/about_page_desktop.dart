@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:finanstic_website/pages/service_page.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -7,8 +5,7 @@ import 'package:video_player/video_player.dart';
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
 import '../../pages/home_page.dart';
-import '../../refactored_widgets/about_content.dart';
-import '../../refactored_widgets/about_heading.dart';
+
 
 class AboutPageDesktop extends StatefulWidget {
   const AboutPageDesktop({super.key});
