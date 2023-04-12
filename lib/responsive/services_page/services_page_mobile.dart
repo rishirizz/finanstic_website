@@ -139,7 +139,9 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                             sigmaY: 1.0,
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 20.0),
+                            padding: const EdgeInsets.only(
+                              bottom: 20.0,
+                            ),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color.fromARGB(137, 138, 138, 138),

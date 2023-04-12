@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:finanstic_website/constants/constants.dart';
+import 'package:finanstic_website/pages/about_page.dart';
 import 'package:flutter/material.dart';
 import '../../components/text_styles.dart';
 import '../../pages/service_page.dart';
@@ -81,43 +82,43 @@ class _HomePageMobileState extends State<HomePageMobile>
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    MouseRegion(
-                      onHover: _onHoverAbout,
-                      onExit: _onExitAbout,
-                      child: InkWell(
-                        onTap: () {},
-                        child: Text(
-                          'About',
-                          style: headerTextStyleMobile(context).copyWith(
-                            color: textColorAbout,
-                            fontSize:
-                                textFontSizeAbout * getTextScaleFactor(context),
-                            decoration: aboutTextDecoration,
-                          ),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          isMenuOpened = false;
+                        });
+                        Navigator.pushNamed(
+                          context,
+                          AboutPage.routeName,
+                        );
+                      },
+                      child: Text(
+                        'About',
+                        style: headerTextStyleMobile(context).copyWith(
+                          color: textColorAbout,
+                          fontSize:
+                              textFontSizeAbout * getTextScaleFactor(context),
+                          decoration: aboutTextDecoration,
                         ),
                       ),
                     ),
-                    MouseRegion(
-                      onHover: _onHoverServices,
-                      onExit: _onExitServices,
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            isMenuOpened = false;
-                          });
-                          Navigator.pushNamed(
-                            context,
-                            ServicesPage.routeName,
-                          );
-                        },
-                        child: Text(
-                          'Services',
-                          style: headerTextStyleMobile(context).copyWith(
-                            color: textColorServices,
-                            fontSize: textFontSizeServices *
-                                getTextScaleFactor(context),
-                            decoration: servicesTextDecoration,
-                          ),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          isMenuOpened = false;
+                        });
+                        Navigator.pushNamed(
+                          context,
+                          ServicesPage.routeName,
+                        );
+                      },
+                      child: Text(
+                        'Services',
+                        style: headerTextStyleMobile(context).copyWith(
+                          color: textColorServices,
+                          fontSize: textFontSizeServices *
+                              getTextScaleFactor(context),
+                          decoration: servicesTextDecoration,
                         ),
                       ),
                     ),
@@ -128,7 +129,7 @@ class _HomePageMobileState extends State<HomePageMobile>
                 child: Column(
                   children: [
                     Container(
-                      height: 250,
+                      height: 300,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
@@ -138,25 +139,47 @@ class _HomePageMobileState extends State<HomePageMobile>
                         ),
                       ),
                       child: Stack(
+                        alignment: Alignment.bottomCenter,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'FINANSTIC',
-                                style: headerTextStyleMobile(context),
+                          BackdropFilter(
+                            filter: ImageFilter.blur(
+                              sigmaX: 1.0,
+                              sigmaY: 1.0,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                30,
+                                0,
+                                30,
+                                20,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 30,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromARGB(137, 138, 138, 138),
+                                  borderRadius: BorderRadius.circular(20.0),
                                 ),
-                                child: Text(
-                                  'A simple and efficient expense tracking application that actually gets the job done.',
-                                  style: primaryTextStyle(context),
-                                  textAlign: TextAlign.center,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 10.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        'FINANSTIC',
+                                        style: headerTextStyleMobile(context),
+                                      ),
+                                      Text(
+                                        'A simple and efficient expense tracking application that actually gets the job done.',
+                                        style: primaryTextStyle(context),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ],
+                            ),
                           ),
                         ],
                       ),
@@ -189,38 +212,6 @@ class _HomePageMobileState extends State<HomePageMobile>
               ),
       ),
     );
-  }
-
-  void _onHoverAbout(PointerEvent details) {
-    setState(() {
-      textColorAbout = Colors.black;
-      textFontSizeAbout = 40 * getTextScaleFactor(context);
-      aboutTextDecoration = TextDecoration.underline;
-    });
-  }
-
-  void _onExitAbout(PointerEvent details) {
-    setState(() {
-      textColorAbout = const Color(0xff707070);
-      textFontSizeAbout = 30 * getTextScaleFactor(context);
-      aboutTextDecoration = TextDecoration.none;
-    });
-  }
-
-  void _onHoverServices(PointerEvent details) {
-    setState(() {
-      textColorServices = Colors.black;
-      textFontSizeServices = 40 * getTextScaleFactor(context);
-      servicesTextDecoration = TextDecoration.underline;
-    });
-  }
-
-  void _onExitServices(PointerEvent details) {
-    setState(() {
-      textColorServices = const Color(0xff707070);
-      textFontSizeServices = 30 * getTextScaleFactor(context);
-      servicesTextDecoration = TextDecoration.none;
-    });
   }
 
   void handleOnPressed() {

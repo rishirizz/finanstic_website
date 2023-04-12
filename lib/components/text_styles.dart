@@ -28,7 +28,7 @@ TextStyle primaryTextStyle(BuildContext context) {
 
 TextStyle h2TextStyle(BuildContext context) {
   return GoogleFonts.prompt(
-    fontSize: 24 * getTextScaleFactor(context),
+    fontSize: 26 * getTextScaleFactor(context),
     color: Colors.black,
     decoration: TextDecoration.underline,
     decorationColor: decorationColor,
@@ -37,7 +37,7 @@ TextStyle h2TextStyle(BuildContext context) {
 
 TextStyle paragraphTextStyle(BuildContext context) {
   return GoogleFonts.montserrat(
-    fontSize: 18 * getTextScaleFactor(context),
+    fontSize: 20 * getTextScaleFactor(context),
     color: paragraphColor,
   );
 }
