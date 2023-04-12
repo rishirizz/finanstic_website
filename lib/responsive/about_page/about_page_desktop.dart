@@ -135,6 +135,9 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                   ),
                   child: Column(
                     children: [
+                      const SizedBox(
+                        height: 50,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -166,11 +169,30 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                             width: 30,
                           ),
                           Expanded(
-                            child: AspectRatio(
-                              aspectRatio: _controller.value.aspectRatio,
-                              child: VideoPlayer(
-                                _controller,
-                              ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Check out the App preview.',
+                                  style: h2TextStyle(context).copyWith(
+                                    decoration: TextDecoration.none,
+                                    fontSize: 36 * getTextScaleFactor(context),
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                SizedBox(
+                                  height: 400,
+                                  width: 600,
+                                  child: AspectRatio(
+                                    aspectRatio: _controller.value.aspectRatio,
+                                    child: VideoPlayer(
+                                      _controller,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
