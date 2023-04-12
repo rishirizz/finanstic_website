@@ -41,3 +41,10 @@ TextStyle paragraphTextStyle(BuildContext context) {
     color: paragraphColor,
   );
 }
+
+TextStyle footerTextStyle(BuildContext context) {
+  return GoogleFonts.shadowsIntoLight(
+    fontSize: 30 * getTextScaleFactor(context),
+    color: Colors.white,
+  );
+}

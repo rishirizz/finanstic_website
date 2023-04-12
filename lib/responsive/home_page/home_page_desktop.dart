@@ -7,6 +7,7 @@ import '../../pages/home_page.dart';
 import '../../pages/service_page.dart';
 import '../../refactored_widgets/about_content.dart';
 import '../../refactored_widgets/about_heading.dart';
+import '../footer/footer_desktop.dart';
 
 class HomePageDesktop extends StatelessWidget {
   const HomePageDesktop({super.key});
@@ -146,6 +147,7 @@ class HomePageDesktop extends StatelessWidget {
                   ],
                 ),
               ),
+              const FooterDesktop(),
             ],
           ),
         ),

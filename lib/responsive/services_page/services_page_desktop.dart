@@ -6,6 +6,7 @@ import '../../pages/about_page.dart';
 import '../../pages/home_page.dart';
 import '../../refactored_widgets/about_content.dart';
 import '../../refactored_widgets/about_heading.dart';
+import '../footer/footer_desktop.dart';
 
 class ServicesPageDesktop extends StatefulWidget {
   const ServicesPageDesktop({super.key});
@@ -275,6 +276,7 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                   ),
                 ),
               ),
+              const FooterDesktop(),
             ],
           ),
         ),

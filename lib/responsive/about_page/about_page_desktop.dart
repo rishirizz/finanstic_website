@@ -5,6 +5,7 @@ import 'package:video_player/video_player.dart';
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
 import '../../pages/home_page.dart';
+import '../footer/footer_desktop.dart';
 
 class AboutPageDesktop extends StatefulWidget {
   const AboutPageDesktop({super.key});
@@ -200,6 +201,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                   ),
                 ),
               ),
+              const FooterDesktop(),
             ],
           ),
         ),
