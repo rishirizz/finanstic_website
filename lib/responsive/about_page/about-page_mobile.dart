@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
+import '../../pages/about_page.dart';
 import '../../pages/home_page.dart';
 import '../../pages/service_page.dart';
 import '../../refactored_widgets/about_content.dart';
@@ -82,43 +83,31 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    MouseRegion(
-                      onHover: _onHoverAbout,
-                      onExit: _onExitAbout,
-                      child: InkWell(
-                        onTap: () {},
-                        child: Text(
-                          'About',
-                          style: headerTextStyleMobile(context).copyWith(
-                            color: textColorAbout,
-                            fontSize:
-                                textFontSizeAbout * getTextScaleFactor(context),
-                            decoration: aboutTextDecoration,
-                          ),
-                        ),
+                    Text(
+                      'About',
+                      style: headerTextStyleMobile(context).copyWith(
+                        color: Colors.black,
+                        fontSize: 40 * getTextScaleFactor(context),
+                        decoration: TextDecoration.underline,
                       ),
                     ),
-                    MouseRegion(
-                      onHover: _onHoverServices,
-                      onExit: _onExitServices,
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            isMenuOpened = false;
-                          });
-                          Navigator.pushNamed(
-                            context,
-                            ServicesPage.routeName,
-                          );
-                        },
-                        child: Text(
-                          'Services',
-                          style: headerTextStyleMobile(context).copyWith(
-                            color: textColorServices,
-                            fontSize: textFontSizeServices *
-                                getTextScaleFactor(context),
-                            decoration: servicesTextDecoration,
-                          ),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          isMenuOpened = false;
+                        });
+                        Navigator.pushNamed(
+                          context,
+                          ServicesPage.routeName,
+                        );
+                      },
+                      child: Text(
+                        'Services',
+                        style: headerTextStyleMobile(context).copyWith(
+                          color: textColorServices,
+                          fontSize: textFontSizeServices *
+                              getTextScaleFactor(context),
+                          decoration: servicesTextDecoration,
                         ),
                       ),
                     ),
@@ -134,11 +123,11 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                       alignment: Alignment.bottomCenter,
                       children: [
                         Container(
-                          height: 250,
+                          height: 320,
                           decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage(
-                                'assets/laptop.jpg',
+                                'assets/about1.jpg',
                               ),
                               fit: BoxFit.cover,
                             ),
@@ -149,14 +138,30 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                             sigmaX: 1.0,
                             sigmaY: 1.0,
                           ),
-                          child: Text(
-                            'App Features',
-                            style: headerTextStyleMobile(context),
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 20.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(137, 138, 138, 138),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  'Get ready to level up financially!',
+                                  style:
+                                      headerTextStyleMobile(context).copyWith(
+                                    fontSize: 28 * getTextScaleFactor(context),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ],
                     ),
                     Container(
+                      height: 500,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
@@ -176,83 +181,45 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                               height: 40,
                             ),
                             Text(
-                              'What we offer',
+                              'There is no better time than now.',
                               style: h2TextStyle(context).copyWith(
                                 decoration: TextDecoration.none,
+                                fontSize: 40 * getTextScaleFactor(context),
                               ),
                             ),
                             const SizedBox(
                               height: 40,
                             ),
-                            const AboutHeading(
-                              heading: 'Seamless Experience',
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const AboutContent(
-                              content: seamlessExperience,
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const AboutHeading(
-                              heading: 'Interactive Animations',
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const AboutContent(
-                              content: interactiveAnimations,
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const AboutHeading(
-                              heading: 'Security',
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const AboutContent(
-                              content: security,
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const AboutHeading(
-                              heading: 'Choosing Currency',
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const AboutContent(
-                              content: choosingCurrency,
+                            Text(
+                              aboutPageContent,
+                              style: paragraphTextStyle(context).copyWith(
+                                fontSize: 22 * getTextScaleFactor(context),
+                              ),
                             ),
                             const SizedBox(
                               height: 40,
-                            ),
-                            Container(
-                              color: Colors.white,
-                              child: GridView.builder(
-                                  shrinkWrap: true,
-                                  itemCount: appImages.length,
-                                  gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                    childAspectRatio: 1 / 2,
-                                  ),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return Image.asset(
-                                      appImages[index],
-                                    );
-                                  }),
                             ),
                           ],
                         ),
                       ),
                     ),
+                    // Container(
+                    //   color: Colors.white,
+                    //   child: GridView.builder(
+                    //       physics: const NeverScrollableScrollPhysics(),
+                    //       shrinkWrap: true,
+                    //       itemCount: appImages.length,
+                    //       gridDelegate:
+                    //           const SliverGridDelegateWithFixedCrossAxisCount(
+                    //         crossAxisCount: 2,
+                    //         childAspectRatio: 1 / 2,
+                    //       ),
+                    //       itemBuilder: (BuildContext context, int index) {
+                    //         return Image.asset(
+                    //           appImages[index],
+                    //         );
+                    //       }),
+                    // ),
                   ],
                 ),
               ),
@@ -267,38 +234,6 @@ class _AboutPageMobileState extends State<AboutPageMobile>
       isPlaying
           ? animationController!.forward()
           : animationController!.reverse();
-    });
-  }
-
-  void _onHoverAbout(PointerEvent details) {
-    setState(() {
-      textColorAbout = Colors.black;
-      textFontSizeAbout = 40 * getTextScaleFactor(context);
-      aboutTextDecoration = TextDecoration.underline;
-    });
-  }
-
-  void _onExitAbout(PointerEvent details) {
-    setState(() {
-      textColorAbout = const Color(0xff707070);
-      textFontSizeAbout = 30 * getTextScaleFactor(context);
-      aboutTextDecoration = TextDecoration.none;
-    });
-  }
-
-  void _onHoverServices(PointerEvent details) {
-    setState(() {
-      textColorServices = Colors.black;
-      textFontSizeServices = 40 * getTextScaleFactor(context);
-      servicesTextDecoration = TextDecoration.underline;
-    });
-  }
-
-  void _onExitServices(PointerEvent details) {
-    setState(() {
-      textColorServices = const Color(0xff707070);
-      textFontSizeServices = 30 * getTextScaleFactor(context);
-      servicesTextDecoration = TextDecoration.none;
     });
   }
 }

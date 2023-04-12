@@ -6,7 +6,6 @@ import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
 import '../../pages/home_page.dart';
 
-
 class AboutPageDesktop extends StatefulWidget {
   const AboutPageDesktop({super.key});
 
@@ -144,7 +143,7 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'There is no better time than now',
+                                  'There is no better time than now.',
                                   style: h2TextStyle(context).copyWith(
                                     decoration: TextDecoration.none,
                                     fontSize: 36 * getTextScaleFactor(context),
