@@ -187,8 +187,9 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
   }
 
   initializeVideoPlayer() {
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.asset(
+      'assets/app_feature.mp4',
+     
     );
     _controller.initialize().then(
           (value) => _controller.play(),

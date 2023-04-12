@@ -201,33 +201,26 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                             const SizedBox(
                               height: 60,
                             ),
+                            Text(
+                              'Check out the App preview.',
+                              style: h2TextStyle(context).copyWith(
+                                decoration: TextDecoration.none,
+                                fontSize: 40 * getTextScaleFactor(context),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
                           ],
                         ),
                       ),
                     ),
                     AspectRatio(
-                      aspectRatio: _controller.value.aspectRatio,
+                      aspectRatio: 9 / 16,
                       child: VideoPlayer(
                         _controller,
                       ),
                     ),
-                    // Container(
-                    //   color: Colors.white,
-                    //   child: GridView.builder(
-                    //       physics: const NeverScrollableScrollPhysics(),
-                    //       shrinkWrap: true,
-                    //       itemCount: appImages.length,
-                    //       gridDelegate:
-                    //           const SliverGridDelegateWithFixedCrossAxisCount(
-                    //         crossAxisCount: 2,
-                    //         childAspectRatio: 1 / 2,
-                    //       ),
-                    //       itemBuilder: (BuildContext context, int index) {
-                    //         return Image.asset(
-                    //           appImages[index],
-                    //         );
-                    //       }),
-                    // ),
                   ],
                 ),
               ),
@@ -246,8 +239,8 @@ class _AboutPageMobileState extends State<AboutPageMobile>
   }
 
   initializeVideoPlayer() {
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.asset(
+      'assets/app_feature.mp4',
     );
     _controller.initialize().then(
           (value) => _controller.play(),
