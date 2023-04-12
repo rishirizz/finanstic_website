@@ -31,7 +31,6 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Container(

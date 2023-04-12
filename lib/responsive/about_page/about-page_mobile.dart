@@ -120,7 +120,6 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                 ),
               )
             : SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

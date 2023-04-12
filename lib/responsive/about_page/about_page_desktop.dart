@@ -27,7 +27,6 @@ class _AboutPageDesktopState extends State<AboutPageDesktop> {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Container(

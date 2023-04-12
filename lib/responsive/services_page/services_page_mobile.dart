@@ -117,7 +117,6 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                 ),
               )
             : SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
