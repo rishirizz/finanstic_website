@@ -7,6 +7,7 @@ import '../../components/text_styles.dart';
 import '../../pages/service_page.dart';
 import '../../refactored_widgets/about_content.dart';
 import '../../refactored_widgets/about_heading.dart';
+import '../footer/footer_mobile.dart';
 
 class HomePageMobile extends StatefulWidget {
   const HomePageMobile({super.key});
@@ -210,6 +211,7 @@ class _HomePageMobileState extends State<HomePageMobile>
                         ],
                       ),
                     ),
+                    const FooterMobile(),
                   ],
                 ),
               ),

@@ -45,9 +45,11 @@ class _FooterDesktopState extends State<FooterDesktop> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  footerQuote,
-                  style: footerTextStyle(context),
+                FittedBox(
+                  child: Text(
+                    footerQuote,
+                    style: footerTextStyle(context),
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -59,7 +61,31 @@ class _FooterDesktopState extends State<FooterDesktop> {
                       ),
                     ),
                   ],
-                )
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Image.asset(
+                      'assets/youtube.png',
+                      height: 60,
+                      width: 60,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Image.asset(
+                      'assets/youtube.png',
+                      height: 60,
+                      width: 60,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
               ],
             )
           ],
