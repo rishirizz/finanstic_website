@@ -51,19 +51,10 @@ class _HomePageMobileState extends State<HomePageMobile>
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    HomePageMobile.routeName,
-                    (Route route) => false,
-                  );
-                },
-                child: Image.asset(
-                  'assets/finanstic.png',
-                  height: 30,
-                  filterQuality: FilterQuality.high,
-                ),
+              Image.asset(
+                'assets/finanstic.png',
+                height: 30,
+                filterQuality: FilterQuality.high,
               ),
               IconButton(
                 color: Colors.black,
