@@ -24,18 +24,33 @@ class _FooterDesktopState extends State<FooterDesktop> {
         ),
         child: Row(
           children: [
-            InkWell(
-              onTap: () {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  HomePage.routeName,
-                  (Route route) => false,
-                );
-              },
-              child: Image.asset(
-                'assets/finanstic_app_icon.png',
-                height: 100,
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      HomePage.routeName,
+                      (Route route) => false,
+                    );
+                  },
+                  child: Image.asset(
+                    'assets/finanstic_app_icon.png',
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  email,
+                  style: paragraphTextStyle(context).copyWith(
+                    color: Colors.white,
+                    fontSize: 13 * getTextScaleFactor(context),
+                  ),
+                ),
+              ],
             ),
             const Expanded(
               child: SizedBox(),
