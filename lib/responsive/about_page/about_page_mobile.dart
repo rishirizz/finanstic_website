@@ -6,11 +6,8 @@ import 'package:video_player/video_player.dart';
 
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
-import '../../pages/about_page.dart';
 import '../../pages/home_page.dart';
 import '../../pages/service_page.dart';
-import '../../refactored_widgets/about_content.dart';
-import '../../refactored_widgets/about_heading.dart';
 
 class AboutPageMobile extends StatefulWidget {
   const AboutPageMobile({super.key});

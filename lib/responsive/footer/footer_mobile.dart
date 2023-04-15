@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
-import '../../pages/home_page.dart';
 
 class FooterMobile extends StatefulWidget {
   const FooterMobile({super.key});

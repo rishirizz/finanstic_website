@@ -1,6 +1,6 @@
 import 'package:finanstic_website/pages/about_page.dart';
 import 'package:finanstic_website/pages/service_page.dart';
-import 'package:finanstic_website/responsive/about_page/about-page_mobile.dart';
+import 'package:finanstic_website/responsive/about_page/about_page_mobile.dart';
 import 'package:finanstic_website/responsive/about_page/about_page_desktop.dart';
 import 'package:finanstic_website/responsive/services_page/services_page_desktop.dart';
 import 'package:finanstic_website/responsive/services_page/services_page_mobile.dart';

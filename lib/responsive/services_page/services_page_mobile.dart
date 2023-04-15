@@ -5,7 +5,6 @@ import 'package:finanstic_website/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../../components/text_styles.dart';
 import '../../constants/constants.dart';
-import '../../pages/service_page.dart';
 import '../../refactored_widgets/about_content.dart';
 import '../../refactored_widgets/about_heading.dart';
 import '../footer/footer_mobile.dart';
