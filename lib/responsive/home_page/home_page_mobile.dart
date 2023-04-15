@@ -80,53 +80,63 @@ class _HomePageMobileState extends State<HomePageMobile>
           ),
         ),
         body: (isMenuOpened)
-            ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          isMenuOpened = false;
-                        });
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          AboutPage.routeName,
-                          (Route route) => false,
-                        );
-                      },
-                      child: Text(
-                        'About',
-                        style: headerTextStyleMobile(context).copyWith(
-                          color: textColorAbout,
-                          fontSize:
-                              textFontSizeAbout * getTextScaleFactor(context),
-                          decoration: aboutTextDecoration,
+            ? Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/white.jpg',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            isMenuOpened = false;
+                          });
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            AboutPage.routeName,
+                            (Route route) => false,
+                          );
+                        },
+                        child: Text(
+                          'About',
+                          style: headerTextStyleMobile(context).copyWith(
+                            color: textColorAbout,
+                            fontSize:
+                                textFontSizeAbout * getTextScaleFactor(context),
+                            decoration: aboutTextDecoration,
+                          ),
                         ),
                       ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          isMenuOpened = false;
-                        });
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          ServicesPage.routeName,
-                          (Route route) => false,
-                        );
-                      },
-                      child: Text(
-                        'Services',
-                        style: headerTextStyleMobile(context).copyWith(
-                          color: textColorServices,
-                          fontSize: textFontSizeServices *
-                              getTextScaleFactor(context),
-                          decoration: servicesTextDecoration,
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            isMenuOpened = false;
+                          });
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            ServicesPage.routeName,
+                            (Route route) => false,
+                          );
+                        },
+                        child: Text(
+                          'Services',
+                          style: headerTextStyleMobile(context).copyWith(
+                            color: textColorServices,
+                            fontSize: textFontSizeServices *
+                                getTextScaleFactor(context),
+                            decoration: servicesTextDecoration,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             : SingleChildScrollView(

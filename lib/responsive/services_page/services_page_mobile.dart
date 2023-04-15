@@ -81,40 +81,50 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
           ),
         ),
         body: (isMenuOpened)
-            ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          isMenuOpened = false;
-                        });
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          AboutPage.routeName,
-                          (Route route) => false,
-                        );
-                      },
-                      child: Text(
-                        'About',
-                        style: headerTextStyleMobile(context).copyWith(
-                          color: textColorAbout,
-                          fontSize:
-                              textFontSizeAbout * getTextScaleFactor(context),
-                          decoration: aboutTextDecoration,
+            ? Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/white.jpg',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            isMenuOpened = false;
+                          });
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            AboutPage.routeName,
+                            (Route route) => false,
+                          );
+                        },
+                        child: Text(
+                          'About',
+                          style: headerTextStyleMobile(context).copyWith(
+                            color: textColorAbout,
+                            fontSize:
+                                textFontSizeAbout * getTextScaleFactor(context),
+                            decoration: aboutTextDecoration,
+                          ),
                         ),
                       ),
-                    ),
-                    Text(
-                      'Services',
-                      style: headerTextStyleMobile(context).copyWith(
-                        color: Colors.black,
-                        fontSize: 40 * getTextScaleFactor(context),
-                        decoration: TextDecoration.underline,
+                      Text(
+                        'Services',
+                        style: headerTextStyleMobile(context).copyWith(
+                          color: Colors.black,
+                          fontSize: 40 * getTextScaleFactor(context),
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             : SingleChildScrollView(

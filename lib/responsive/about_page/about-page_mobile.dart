@@ -84,40 +84,50 @@ class _AboutPageMobileState extends State<AboutPageMobile>
           ),
         ),
         body: (isMenuOpened)
-            ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'About',
-                      style: headerTextStyleMobile(context).copyWith(
-                        color: Colors.black,
-                        fontSize: 40 * getTextScaleFactor(context),
-                        decoration: TextDecoration.underline,
-                      ),
+            ? Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/white.jpg',
                     ),
-                    InkWell(
-                      onTap: () {
-                        setState(() {
-                          isMenuOpened = false;
-                        });
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          ServicesPage.routeName,
-                          (Route route) => false,
-                        );
-                      },
-                      child: Text(
-                        'Services',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'About',
                         style: headerTextStyleMobile(context).copyWith(
-                          color: textColorServices,
-                          fontSize: textFontSizeServices *
-                              getTextScaleFactor(context),
-                          decoration: servicesTextDecoration,
+                          color: Colors.black,
+                          fontSize: 40 * getTextScaleFactor(context),
+                          decoration: TextDecoration.underline,
                         ),
                       ),
-                    ),
-                  ],
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            isMenuOpened = false;
+                          });
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            ServicesPage.routeName,
+                            (Route route) => false,
+                          );
+                        },
+                        child: Text(
+                          'Services',
+                          style: headerTextStyleMobile(context).copyWith(
+                            color: textColorServices,
+                            fontSize: textFontSizeServices *
+                                getTextScaleFactor(context),
+                            decoration: servicesTextDecoration,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               )
             : SingleChildScrollView(
