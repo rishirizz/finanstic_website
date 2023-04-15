@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const webScreenSize = 800;
 
@@ -33,3 +34,31 @@ const String aboutPageContent =
     'Finanstic helps you stay organized, save time, and make smarter financial decisions. By tracking your expenses, you gain a better understanding of your spending habits, identify areas where you can save money, and prioritize your financial goals. With Finanstic, you can easily monitor your cash flow, avoid overspending, and plan for unexpected expenses. It\'s an indispensable tool for achieving financial stability and creating a better financial future.';
 const String footerQuote =
     '"Money is like a sixth sense - and you can\'t make use of the other five without it." ';
+
+const String playStoreURL =
+    'https://play.google.com/store/apps/details?id=com.dev.expense_tracker';
+
+const String youtubeURL = 'https://www.youtube.com/@HumorousNavigator777';
+
+const String email = 'arijeetc6@gmail.com';
+
+launchEmailURL() async {
+  final Uri params = Uri(
+    scheme: 'mailto',
+    path: email,
+  );
+  String url = params.toString();
+  await launchUrl(Uri.parse(url));
+}
+
+launchPlayStore() async {
+  await launchUrl(
+    Uri.parse(playStoreURL),
+  );
+}
+
+launchYoutube() async {
+  await launchUrl(
+    Uri.parse(youtubeURL),
+  );
+}

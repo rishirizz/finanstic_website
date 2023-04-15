@@ -8,6 +8,7 @@ import '../../constants/constants.dart';
 import '../../pages/service_page.dart';
 import '../../refactored_widgets/about_content.dart';
 import '../../refactored_widgets/about_heading.dart';
+import '../footer/footer_mobile.dart';
 
 class ServicesPageMobile extends StatefulWidget {
   const ServicesPageMobile({super.key});
@@ -118,10 +119,9 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
               )
             : SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Stack(
-                      alignment: Alignment.bottomCenter,
+                      alignment: Alignment.center,
                       children: [
                         Container(
                           height: 320,
@@ -136,16 +136,16 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                         ),
                         BackdropFilter(
                           filter: ImageFilter.blur(
-                            sigmaX: 1.0,
-                            sigmaY: 1.0,
+                            sigmaX: 2.0,
+                            sigmaY: 2.0,
                           ),
                           child: Padding(
                             padding: const EdgeInsets.only(
-                              bottom: 20.0,
+                              top: 20.0,
                             ),
                             child: Container(
                               decoration: BoxDecoration(
-                                color: const Color.fromARGB(137, 138, 138, 138),
+                                color: const Color.fromARGB(136, 198, 198, 198),
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: Padding(
@@ -258,6 +258,7 @@ class _ServicesPageMobileState extends State<ServicesPageMobile>
                             );
                           }),
                     ),
+                    const FooterMobile(),
                   ],
                 ),
               ),

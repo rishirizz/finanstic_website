@@ -133,7 +133,7 @@ class _HomePageMobileState extends State<HomePageMobile>
                 child: Column(
                   children: [
                     Container(
-                      height: 300,
+                      height: 280,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
@@ -143,7 +143,7 @@ class _HomePageMobileState extends State<HomePageMobile>
                         ),
                       ),
                       child: Stack(
-                        alignment: Alignment.bottomCenter,
+                        alignment: Alignment.center,
                         children: [
                           BackdropFilter(
                             filter: ImageFilter.blur(

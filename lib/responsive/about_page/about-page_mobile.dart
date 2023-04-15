@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:finanstic_website/responsive/footer/footer_mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -121,48 +122,62 @@ class _AboutPageMobileState extends State<AboutPageMobile>
               )
             : SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Stack(
-                      alignment: Alignment.bottomCenter,
-                      children: [
-                        Container(
-                          height: 320,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(
-                                'assets/about1.jpg',
-                              ),
-                              fit: BoxFit.cover,
-                            ),
+                    Container(
+                      width: double.infinity,
+                      height: 280,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            'assets/about1.jpg',
                           ),
+                          fit: BoxFit.cover,
                         ),
-                        BackdropFilter(
-                          filter: ImageFilter.blur(
-                            sigmaX: 1.0,
-                            sigmaY: 1.0,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 20.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(137, 138, 138, 138),
-                                borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          BackdropFilter(
+                            filter: ImageFilter.blur(
+                              sigmaX: 1.0,
+                              sigmaY: 1.0,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                top: 20,
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text(
-                                  'Get ready to level up financially!',
-                                  style:
-                                      headerTextStyleMobile(context).copyWith(
-                                    fontSize: 28 * getTextScaleFactor(context),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromARGB(137, 138, 138, 138),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 10.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Text(
+                                          'Get ready to level up financially!',
+                                          style: headerTextStyleMobile(context)
+                                              .copyWith(
+                                            fontSize: 28 *
+                                                getTextScaleFactor(context),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     Container(
                       decoration: const BoxDecoration(
@@ -222,6 +237,7 @@ class _AboutPageMobileState extends State<AboutPageMobile>
                         _controller,
                       ),
                     ),
+                    const FooterMobile(),
                   ],
                 ),
               ),

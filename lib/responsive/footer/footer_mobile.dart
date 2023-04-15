@@ -16,58 +16,94 @@ class _FooterMobileState extends State<FooterMobile> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 100,
+      height: 120,
       color: Colors.black,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 30.0,
-          horizontal: 50,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            FittedBox(
-              child: Text(
-                footerQuote,
-                style: footerTextStyle(context),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // FittedBox(
+          //   child: Text(
+          //     footerQuote,
+          //     style: footerTextStyle(context),
+          //   ),
+          // ),
+          // FittedBox(
+          //   child: Text(
+          //     '— William Somerset Maugham',
+          //     style: primaryTextStyle(context).copyWith(
+          //       color: Colors.white,
+          //       fontSize: 10 * getTextScaleFactor(context),
+          //     ),
+          //   ),
+          // ),
+          // const SizedBox(
+          //   height: 20,
+          // ),
+          Text(
+            'Let\'s connect',
+            style: footerTextStyle(context),
+          ),
+          // const SizedBox(
+          //   height: 20,
+          // ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                onTap: () {
+                  launchPlayStore();
+                },
+                child: Image.asset(
+                  'assets/google_play.png',
+                  height: 35,
+                  width: 35,
+                  color: Colors.white,
+                ),
               ),
-            ),
-            FittedBox(
-              child: Text(
-                '— William Somerset Maugham',
-                style: primaryTextStyle(context).copyWith(
+              const SizedBox(
+                width: 30,
+              ),
+              InkWell(
+                onTap: () {
+                  launchYoutube();
+                },
+                child: Image.asset(
+                  'assets/youtube.png',
+                  height: 40,
+                  width: 40,
                   color: Colors.white,
-                  fontSize: 10 * getTextScaleFactor(context),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Image.asset(
-                  'assets/youtube.png',
-                  height: 60,
-                  width: 60,
+              const SizedBox(
+                width: 30,
+              ),
+              IconButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  launchEmailURL();
+                },
+                icon: const Icon(
+                  Icons.email,
+                  size: 38,
                   color: Colors.white,
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Image.asset(
-                  'assets/youtube.png',
-                  height: 60,
-                  width: 60,
-                  color: Colors.white,
-                ),
-              ],
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            email,
+            style: paragraphTextStyle(context).copyWith(
+              color: Colors.white,
+              fontSize: 10 * getTextScaleFactor(context),
             ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+        ],
       ),
     );
   }
