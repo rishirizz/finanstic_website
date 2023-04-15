@@ -70,7 +70,7 @@ class _ServicesPageDesktopState extends State<ServicesPageDesktop>
                             );
                           },
                           child: Image.asset(
-                            'assets/finanstic.png',
+                            'assets/finanstic_app_icon.png',
                             height: 60,
                             filterQuality: FilterQuality.high,
                           ),

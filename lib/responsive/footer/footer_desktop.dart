@@ -16,12 +16,11 @@ class _FooterDesktopState extends State<FooterDesktop> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 300,
+      height: 200,
       color: Colors.black,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 30.0,
-          horizontal: 50,
+          horizontal: 20,
         ),
         child: Row(
           children: [
@@ -48,41 +47,63 @@ class _FooterDesktopState extends State<FooterDesktop> {
                 FittedBox(
                   child: Text(
                     footerQuote,
-                    style: footerTextStyle(context),
+                    style: footerTextStyle(context).copyWith(
+                      fontSize: 18 * getTextScaleFactor(context),
+                    ),
+                    softWrap: true,
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      '— William Somerset Maugham',
-                      style: primaryTextStyle(context).copyWith(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                Text(
+                  '— William Somerset Maugham',
+                  style: primaryTextStyle(context).copyWith(
+                    color: Colors.white,
+                    fontSize: 12 * getTextScaleFactor(context),
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/youtube.png',
-                      height: 60,
-                      width: 60,
-                      color: Colors.white,
+                    InkWell(
+                      onTap: () {
+                        launchPlayStore();
+                      },
+                      child: Image.asset(
+                        'assets/google_play.png',
+                        height: 35,
+                        width: 35,
+                        color: Colors.white,
+                      ),
                     ),
                     const SizedBox(
-                      width: 20,
+                      width: 30,
                     ),
-                    Image.asset(
-                      'assets/youtube.png',
-                      height: 60,
-                      width: 60,
-                      color: Colors.white,
+                    InkWell(
+                      onTap: () {
+                        launchYoutube();
+                      },
+                      child: Image.asset(
+                        'assets/youtube.png',
+                        height: 40,
+                        width: 40,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    IconButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () {
+                        launchEmailURL();
+                      },
+                      icon: const Icon(
+                        Icons.email,
+                        size: 38,
+                        color: Colors.white,
+                      ),
                     ),
                   ],
                 ),
